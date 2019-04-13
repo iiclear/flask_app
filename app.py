@@ -25,4 +25,4 @@ def hello_world(question):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port =5000)
+    app.run(host='172.19.10.70',port =5000)
