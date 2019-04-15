@@ -41,7 +41,6 @@ def ws():
     #user_socket_list.append(user_socket)
    # print(len(user_socket_list),user_socket_list)
     while 1:
-        li = []
         msg = user_socket.receive()
         print(msg)
         print(type(msg),msg)
@@ -51,7 +50,7 @@ def ws():
         q = question['data']['mine']['content']
         print(q)
         res = web_bot(q)
-        print(res)
+        print(res,"test")
         a = {
   "username": "客服姐姐",
   "avatar": "https://robot.rszhang.top/images/icon/nv/0.jpg" ,
