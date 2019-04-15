@@ -23,6 +23,7 @@ def reply_msg(msg):
 def web_bot(question):
     answers = " "
     s = '展开全部'
+    ans =" "
     answer = run(str(question).encode('utf-8'))
     print type(answer),'run'
     if (type(answer).__name__ == 'list') or '唔... 怎么回答...' in answer or '天气' in question:
