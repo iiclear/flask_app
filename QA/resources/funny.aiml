@@ -16,7 +16,7 @@
         <template>不早了，太阳照屁屁了～～</template>
     </category>
     <category>
-        <pattern>无敌</pattern>
+        <pattern>无敌 *</pattern>
         <template>嘿嘿，不好意思，献丑了</template>
     </category>
     <category>

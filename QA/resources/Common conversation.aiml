@@ -98,8 +98,12 @@
     </template>
   </category>
 
-  <category><pattern>晚安 *</pattern><template><srai>晚安</srai> </template>  </category>
-  <category><pattern>* 晚安</pattern><template><srai>晚安</srai> </template>  </category>
+  <category><pattern>晚安 *</pattern>
+      <template><srai>晚安</srai> </template>
+  </category>
+  <category><pattern>* 晚安</pattern>
+      <template><srai>晚安</srai> </template>
+  </category>
 
 
   <category>

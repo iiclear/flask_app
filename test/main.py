@@ -17,5 +17,6 @@ while True:
     input_message = raw_input(">>: ")
     message = wordSegment(input_message)
     print message
-    print mybot.respond(message)
+    res = mybot.respond(message)
+    print res
 
