@@ -8,7 +8,7 @@ from flask_bootstrap import Bootstrap
 from geventwebsocket.handler import WebSocketHandler
 from geventwebsocket.websocket import WebSocket
 from gevent.pywsgi import WSGIServer
-from tools import getreplay
+from tools import getreplay,web_bot
 import json
 
 
@@ -35,9 +35,7 @@ def hello_world(question):
 
 @app.route("/test")
 def ws():
-    dict ={
 
-    }
     user_socket = request.environ.get('wsgi.websocket')#type:WebSocket
     #print(len(user_socket))
     #user_socket_list.append(user_socket)
@@ -52,9 +50,9 @@ def ws():
         print(type(question))
         q = question['data']['mine']['content']
         print(q)
-        res = getreplay(q)
+        res = web_bot(q)
         print(res)
-        a ={
+        a = {
   "username": "客服姐姐",
   "avatar": "https://robot.rszhang.top/images/icon/nv/0.jpg" ,
   "id": "-2", #//消息的来源ID（如果是私聊，则是用户id，如果是群聊，则是群组id）
@@ -65,15 +63,7 @@ def ws():
   "fromid": "100000" ,#/消息的发送者id（比如群组中的某个消息发送者），可用于自动解决浏览器多窗口时的一些问题
   "timestamp": 1467475443306 ,#//服务端时间戳毫秒数。注意：如果你返回的是标准的 unix 时间戳，记得要 *1000
 }
-        # a = {
-        #     "emit":"chatMessage",
-        #     "data":a
 
-
-        # }
-        # dic = {"emit": "chatMessage",
-        #        "data": a
-        #        }
 
         user_socket.send(json.dumps(a))
         print(type(a))

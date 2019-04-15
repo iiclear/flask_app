@@ -2,7 +2,8 @@
 import requests
 from bs4 import BeautifulSoup
 import itchat
-
+from QA.Tools.tuling import geta
+from QA.MainProgram import run
 
 def getreplay(question):
     url = 'http://47.101.221.48:5000/api/'+question
@@ -18,6 +19,24 @@ def reply_msg(msg):
 
     answer = getreplay(msg['Content'])
     itchat.send_msg('@'+msg['User']['NickName'] +' '+ str(answer), msg['FromUserName'])
+
+def web_bot(question):
+    answers = " "
+    s = '展开全部'
+    answer = run(str(question).encode('utf-8'))
+    if (type(answer).__name__ == 'list') or '唔... 怎么回答...' in answer or '天气' in question:
+        answers = geta(question)
+        return answers
+    else:
+        print answer
+        if s in str(answer):
+            print answer
+            answer = str(answer).replace('\n', '').replace('展开全部', "").split('已赞过')[0]
+            print answer + '666'
+        return answers
+
+
+
 
 if __name__ == '__main__':
     itchat.auto_login()
