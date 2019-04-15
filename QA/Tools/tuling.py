@@ -32,3 +32,5 @@ def geta(question):
     ans = json.loads(response.text)
     return '*'+ans['results'][0]['values']['text']
 
+if __name__ == '__main__':
+    print geta('wocao')
