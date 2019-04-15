@@ -13,7 +13,7 @@ import json
 
 
 app = Flask(__name__)
-bootstrap = Bootstrap(app)
+#bootstrap = Bootstrap(app)
 
 
 @app.route('/api/<question>')

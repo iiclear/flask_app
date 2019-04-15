@@ -24,6 +24,7 @@ def web_bot(question):
     answers = " "
     s = '展开全部'
     answer = run(str(question).encode('utf-8'))
+    print answer,'run'
     if (type(answer).__name__ == 'list') or '唔... 怎么回答...' in answer or '天气' in question:
         answers = geta(question)
         return answers
@@ -33,7 +34,7 @@ def web_bot(question):
             print answer
             answer = str(answer).replace('\n', '').replace('展开全部', "").split('已赞过')[0]
             print answer + '666'
-        return answers
+        return str(answers).replace('回答：', '').replace('\n', '').strip()
 
 
 
