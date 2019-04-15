@@ -25,18 +25,19 @@ def web_bot(question):
     s = '展开全部'
     ans =" "
     answer = run(str(question).encode('utf-8'))
-    print type(answer),'run'
+    print type(answer),'webbot1'
     if (type(answer).__name__ == 'list') or '唔... 怎么回答...' in answer or '天气' in question:
-        answers = geta(question)
-        return answers
+        answer = geta(question)
+        return answer
     else:
-        print answer
+        print answer,'webbot2'
         if s in str(answer):
             print answer
             answer = str(answer).replace('\n', '').replace('展开全部', "").split('已赞过')[0]
             print answer + '666'
-            ans = str(answers).replace('回答：', '').replace('\n', '').strip()
-        return ans
+            answer = str(answer).replace('回答：', '').replace('\n', '').strip()
+            print answer, 'webbot3'
+        return answer
 
 
 
